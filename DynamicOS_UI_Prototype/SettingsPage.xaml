@@ -1,0 +1,14 @@
+<Page x:Class="Dynamic_Os.SettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="#1a1a1a">
+    <Grid>
+        <!-- Title -->
+        <TextBlock Text="Settings" FontSize="24" Foreground="White" HorizontalAlignment="Center" Margin="0,20,0,0" />
+
+        <!-- Mode Button -->
+        <Button x:Name="ModeSelectionButton" Content="Change Mode" Style="{StaticResource ModernButtonStyle}" 
+                Width="200" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"
+                Click="ModeSelectionButton_Click" />
+    </Grid>
+</Page>
