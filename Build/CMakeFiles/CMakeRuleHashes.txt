@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+90d031ea3de1bbe6f65bd2fc0234ddeb CMakeFiles/Oscyra_autogen
+90d031ea3de1bbe6f65bd2fc0234ddeb CMakeFiles/Oscyra_autogen_timestamp_deps
+4d29fb7c76d510abff40b8f69a567284 Oscyra_autogen/timestamp

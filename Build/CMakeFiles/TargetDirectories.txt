@@ -1,0 +1,5 @@
+/mnt/c/users/akoj2/desktop/oscyra/files/oscyra/build/CMakeFiles/Oscyra.dir
+/mnt/c/users/akoj2/desktop/oscyra/files/oscyra/build/CMakeFiles/edit_cache.dir
+/mnt/c/users/akoj2/desktop/oscyra/files/oscyra/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/users/akoj2/desktop/oscyra/files/oscyra/build/CMakeFiles/Oscyra_autogen_timestamp_deps.dir
+/mnt/c/users/akoj2/desktop/oscyra/files/oscyra/build/CMakeFiles/Oscyra_autogen.dir
