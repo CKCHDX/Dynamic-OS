@@ -1,0 +1,69 @@
+<svg
+  viewBox="0 0 2160 1080"
+  width="512"
+  height="256"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <radialGradient id="bg-gradient" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#232946"/>
+      <stop offset="100%" stop-color="#0a1833"/>
+    </radialGradient>
+    <linearGradient id="cyber-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00eaff"/>
+      <stop offset="100%" stop-color="#00b3ff"/>
+    </linearGradient>
+    <linearGradient id="gold-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5d06f"/>
+      <stop offset="100%" stop-color="#bfa14a"/>
+    </linearGradient>
+    <filter id="subtle-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="6" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="2160" height="1080" fill="url(#bg-gradient)"/>
+  <!-- Animated Outer O ring -->
+  <ellipse id="outerO" cx="540" cy="540" rx="260" ry="260" fill="none" stroke="url(#cyber-gradient)" stroke-width="32" filter="url(#subtle-glow)" stroke-dasharray="1634" stroke-dashoffset="1634">
+    <animate attributeName="stroke-dashoffset" from="1634" to="0" dur="1.5s" fill="freeze"/>
+    <animate attributeName="opacity" from="1" to="1" begin="0s" dur="2.5s" fill="freeze"/>
+    <animate attributeName="opacity" from="1" to="0.2" begin="4.5s" dur="0.5s" fill="freeze"/>
+  </ellipse>
+  <!-- Animated Inner O (eye/power) -->
+  <ellipse id="innerO" cx="540" cy="540" rx="120" ry="120" fill="none" stroke="#fff" stroke-width="10" opacity="0.7" stroke-dasharray="754" stroke-dashoffset="754">
+    <animate attributeName="stroke-dashoffset" from="754" to="0" begin="1s" dur="1.2s" fill="freeze"/>
+    <animate attributeName="opacity" from="0.7" to="0.7" begin="2.2s" dur="2.3s" fill="freeze"/>
+    <animate attributeName="opacity" from="0.7" to="0" begin="4.5s" dur="0.5s" fill="freeze"/>
+  </ellipse>
+  <!-- Power button line -->
+  <rect id="powerLine" x="530" y="370" width="20" height="70" rx="10" fill="#00eaff" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" begin="2.2s" dur="0.3s" fill="freeze"/>
+    <animate attributeName="opacity" from="1" to="0" begin="4.5s" dur="0.5s" fill="freeze"/>
+  </rect>
+  <!-- Circuit lines (animated) -->
+  <polyline id="circuitR" points="540,800 540,900 600,900" fill="none" stroke="#00eaff" stroke-width="6" stroke-linecap="round" stroke-dasharray="0 120" stroke-dashoffset="0">
+    <animate attributeName="stroke-dasharray" from="0 120" to="60 60" begin="2.5s" dur="0.5s" fill="freeze"/>
+    <animate attributeName="opacity" from="1" to="0" begin="4.5s" dur="0.5s" fill="freeze"/>
+  </polyline>
+  <polyline id="circuitL" points="540,800 540,900 480,900" fill="none" stroke="#00eaff" stroke-width="6" stroke-linecap="round" stroke-dasharray="0 120" stroke-dashoffset="0">
+    <animate attributeName="stroke-dasharray" from="0 120" to="60 60" begin="2.5s" dur="0.5s" fill="freeze"/>
+    <animate attributeName="opacity" from="1" to="0" begin="4.5s" dur="0.5s" fill="freeze"/>
+  </polyline>
+  <!-- Eye pupil (AI/vision) -->
+  <circle id="pupil" cx="540" cy="540" r="0" fill="#00eaff" opacity="0.7">
+    <animate attributeName="r" values="0;32;24;0" keyTimes="0;0.3;0.7;1" begin="1.7s" dur="2.8s" fill="freeze"/>
+  </circle>
+  <!-- Final O morph (everything merges into a single O) -->
+  <ellipse id="finalO" cx="540" cy="540" rx="200" ry="200" fill="none" stroke="url(#cyber-gradient)" stroke-width="32" filter="url(#subtle-glow)" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" begin="5s" dur="0.5s" fill="freeze"/>
+  </ellipse>
+  <!-- Company Name (fade in after final O) -->
+  <text x="540" y="1020" text-anchor="middle" font-size="90" font-family="Segoe UI, Arial, sans-serif" fill="#fff" letter-spacing="8" font-weight="bold" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" begin="5.5s" dur="0.7s" fill="freeze"/>
+    OSCYRA SOLUTIONS
+  </text>
+</svg>
