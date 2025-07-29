@@ -1,0 +1,63 @@
+Creating Teaser Video for OS
+A fully code-driven pipeline to produce a polished, cinematic 2D teaser for Dynamic OS—no off-the-shelf animation suites, just programming, shaders and automation.
+
+1. Technology & Toolchain Overview 
+
+Language & Graphics API
+
+C++17 (or newer) for performance and ecosystem maturity. OpenGL (cross-platform) or Vulkan (modern, explicit control) for GPU-accelerated 2D rendering. 
+
+Windowing & Context
+
+GLFW or SDL2 to create windows/contexts and handle input/time. 
+
+Function Loading
+
+GLAD or GLEW to load OpenGL function pointers. 
+
+Math & Utilities
+
+GLM for vector/matrix math. stb_image.h for image loading, stb_image_write.h for frame export. 
+
+Shader Programs
+
+GLSL vertex and fragment shaders for sprites, lighting, bloom/glow, particles. Post-processing via framebuffer objects (FBOs). 
+
+Build & Dependency Management
+
+CMake for cross-platform builds. (Optional) Conan or vcpkg for library dependencies. 
+
+Automation & Scripting
+
+Bash/PowerShell scripts or Python for: Capturing image sequences (offscreen FBOs → PNG). Running FFmpeg to encode final MP4/ProRes. 
+
+Version Control & CI
+
+Git repository. Automated builds and frame exports in CI (GitHub Actions / GitLab CI). 2. Pipeline Workflow 
+
+Setup & Build
+
+Configure with CMake: find GLFW, OpenGL, include GLAD, stb headers. Build your executable (TeaserGenerator). 
+
+Rendering Engine
+
+Initialize window/context. Load shaders and assets (logo textures, icon sprites). Define quad/VBO/VAO setup for 2D sprites. 
+
+Animation System
+
+Keyframe timeline: time → property interpolation (position, scale, color). Event scheduling (e.g. start glow at t=2.0s). 
+
+Effects
+
+Shader-based bloom/glow: render scene → bright-pass → blur → composite. Particle system: GPU-driven point sprites or instanced quads. 
+
+Frame Export
+
+Each frame: render to offscreen FBO, read pixels → PNG via stb_image_write. Name frames sequentially (frame_0001.png, …). 
+
+Video Encoding
+
+Script calls: ffmpeg -r 60 -i frame_%04d.png -c:v libx264 -pix_fmt yuv420p teaser.mp4 Optionally generate WebM or ProRes. 3. Recommended Project Structure /DynamicOSTeaser │ ├── CMakeLists.txt # Build configuration ├── README.md # Overview & build/run instructions │ ├── /src # Core source code (C++) │ ├── main.cpp # Entry point: init, loop, export logic │ ├── Renderer.h/.cpp # OpenGL setup, FBOs, draw calls │ ├── Shader.h/.cpp # GLSL loader, compile/link, error reporting │ ├── Animation.h/.cpp # Timeline, keyframe interpolation │ ├── ParticleSystem.h/.cpp # Particle emitter & update logic │ ├── Texture.h/.cpp # Texture loading (stb_image) & management │ ├── FrameExporter.h/.cpp # FBO readback & PNG write (stb_image_write) │ └── Utils.h/.cpp # Math helpers, timers, file utilities │ ├── /shaders # GLSL files │ ├── sprite.vert │ ├── sprite.frag │ ├── glow.frag # Bloom/glow post-process │ └── particle.frag # Particle rendering │ ├── /assets # Static assets │ ├── dynamic_os_logo.png │ ├── module_icon.png │ └── background_grid.png │ ├── /scripts # Automation scripts │ ├── export_frames.sh # Build & run with frame export flags │ └── encode_video.sh # FFmpeg commands for final encoding │ └── /build # Out-of-source build directory (gitignored) Next Steps Bootstrap: Clone repo scaffold, install dependencies, write “Hello Quad” shader. Iterate: Add timeline, import logo asset, animate appearance. Enhance: Layer glow, particles, keyframe events. Finalize: Run export script, stitch frames into teaser video. 
+
+This structure and toolchain give you a fully programmable pipeline to generate a 30-second teaser video that highlights Dynamic OS’s innovations—entirely through code. Let me know if you’d like starter code snippets or example shaders!
+
