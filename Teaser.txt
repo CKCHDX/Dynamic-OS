@@ -1,0 +1,37 @@
+Dynamic-OS Trailer 25
+2 minute trailer written in html, css and js
+
+final structure
+
+├── gui
+│   ├── hacos
+│   ├── windows1
+|   |   └──win1.png
+│   ├── windows7
+|   |   └──win7.png
+│   ├── windows95
+|   |    └──win95.jpg
+│   ├── windowsXP
+|   |    └──winxp.jpg
+|   └── windows11
+|       └──win11.jpg
+├── index.html
+├── scenes
+│   └── scene01-09
+│       ├── scene.css
+│       ├── scene.html
+│       └── scene.js
+├── script.js
+└── style.css
+
+
+Intro -> 1minute
+
+the intro will be a fast paced history of GUI and showcasing the most popular GUI
+structured scenes
+
+show text -> scene -> text -> scene -> text -> scene -> text.
+
+the middle of the trailer will be 30 seconds that showcase the actual Dynamic-OS such as functions, comparison and much more.
+
+the outro is 30 seconds and will be a fast paced combined of intro and middle
